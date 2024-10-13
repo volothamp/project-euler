@@ -6,5 +6,10 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts'],
+  coveragePathIgnorePatterns: [
+    'node_modules/',
+    'tests/',
+    '<rootDir>/src/main.ts',
+  ],
   coverageDirectory: 'coverage',
 };
