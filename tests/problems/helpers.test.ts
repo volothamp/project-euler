@@ -73,6 +73,21 @@ describe('Problem Helpers', () => {
     });
   });
 
+  describe('generateLinearSequence()', () => {
+    test('generate 5 numbers starting at 1 with increment 1, using defaults', () => {
+      expect(helpers.generateLinearSequence({count: 5})).toEqual([1, 2, 3, 4, 5]);
+    });
+    test('generate 5 numbers starting at 1 with increment 1, using default start', () => {
+      expect(helpers.generateLinearSequence({count: 5, increment: 1})).toEqual([1, 2, 3, 4, 5]);
+    });
+    test('generate 5 numbers starting at 10 with increment 1, using default incrememnt', () => {
+      expect(helpers.generateLinearSequence({count: 5, start: 10})).toEqual([10, 11, 12, 13, 14]);
+    });
+    test('generate 5 numbers starting at 10 with increment 2', () => {
+      expect(helpers.generateLinearSequence({count: 5, start: 10, increment: 2})).toEqual([10, 12, 14, 16, 18]);
+    });
+  });
+
   describe('getLCM()', () => {
     test('LCM of 3, 5, 7 should be 105', () => {
       expect(helpers.getLCM([3, 5, 7])).toBe(105);

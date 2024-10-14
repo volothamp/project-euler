@@ -59,3 +59,7 @@ export function getLCM(numbers: number[]): number {
     lcm += max;
   }
 }
+
+export function generateLinearSequence({ count, increment = 1, start = 1 }: { count: number; increment?: number; start?: number; }): number[] {
+  return Array.from({ length: count }, (_, i) => start + i * increment);
+}
