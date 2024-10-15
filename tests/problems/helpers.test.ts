@@ -118,6 +118,12 @@ describe('Problem Helpers', () => {
     });
   });
 
+  describe('getSequenceSum()', () => {
+    test('sum of [1,2,3,4,5] should be 15', () => {
+      expect(helpers.getSequenceSum([1,2,3,4,5])).toBe(15);
+    });
+  });
+
   describe('convertNumberToSequence()', () => {
     test('convert 123 to [1,2,3]', () => {
       expect(helpers.convertNumberToSequence(123)).toEqual([1, 2, 3]);
@@ -133,6 +139,21 @@ describe('Problem Helpers', () => {
     });
     test('return empty array if string is not a number', () => {
       expect(helpers.convertNumberStringToSequence('1a4')).toEqual([]);
+    });
+  });
+
+  describe('getPrimeSequenceBelow()', () => {
+    test('get prime numbers up to but not including 7', () => {
+      expect(helpers.getPrimeSequenceBelow(7)).toEqual([2, 3, 5]);
+    });
+    test(('get prime numbers up to and including 7'), () => {
+      expect(helpers.getPrimeSequenceBelow(7, true)).toEqual([2, 3, 5, 7]);
+    });
+    test('max of less than 2 supplied returns []', () => {
+      expect(helpers.getPrimeSequenceBelow(2)).toEqual([]);
+    });
+    test('max of 2 (inclusive) supplied returns [2]', () => {
+      expect(helpers.getPrimeSequenceBelow(2, true)).toEqual([2]);
     });
   });
 });
