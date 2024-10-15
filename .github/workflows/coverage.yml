@@ -17,8 +17,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Tests
-        run: npx jest --coverage
+        run: npx jest --coverage --reporters=jest-junit
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
