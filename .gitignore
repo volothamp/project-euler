@@ -19,6 +19,9 @@ lib-cov
 coverage
 *.lcov
 
+# jest-junit
+jest-junit.xml
+
 # Dependency directories
 node_modules/
 
