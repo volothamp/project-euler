@@ -2,6 +2,7 @@ import { getFibonacciSequence } from '../../src/problems/prob-2';
 import { getLargestPalindromeProduct } from '../../src/problems/prob-4';
 import * as p6 from '../../src/problems/prob-6';
 import { getNthPrime } from '../../src/problems/prob-7';
+import { getLargestConsecutiveProduct } from '../../src/problems/prob-8';
 
 describe('Problem Specific Functions', () => {
   describe('Problem 2', () => {
@@ -41,6 +42,12 @@ describe('Problem Specific Functions', () => {
     });
     test('20th prime number should be 71', () => {
       expect(getNthPrime(20)).toBe(71);
+    });
+  });
+
+  describe('Problem 8', () => {
+    test('largest product of 3 adjacent numbers in [1234567890] should be 504', () => {
+      expect(getLargestConsecutiveProduct([1,2,3,4,5,6,7,8,9,0], 3)).toBe(504);
     });
   });
 });

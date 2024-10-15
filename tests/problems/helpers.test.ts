@@ -111,4 +111,29 @@ describe('Problem Helpers', () => {
       expect(helpers.getLCM([0])).toBe(NaN);
     });
   });
+
+  describe('getSequenceProduct()', () => {
+    test('product of [1,2,3,4,5] should be 120', () => {
+      expect(helpers.getSequenceProduct([1,2,3,4,5])).toBe(120);
+    });
+  });
+
+  describe('convertNumberToSequence()', () => {
+    test('convert 123 to [1,2,3]', () => {
+      expect(helpers.convertNumberToSequence(123)).toEqual([1, 2, 3]);
+    });
+  });
+
+  describe('convertNumberStringToSequence()', () => { 
+    test('convert 123 (string) to [1,2,3]', () => {
+      expect(helpers.convertNumberStringToSequence('123')).toEqual([1, 2, 3]);
+    });
+    test('return empty array if string is empty', () => {
+      expect(helpers.convertNumberStringToSequence('')).toEqual([]);
+    });
+    test('return empty array if string is not a number', () => {
+      expect(helpers.convertNumberStringToSequence('1a4')).toEqual([]);
+    });
+  });
 });
+

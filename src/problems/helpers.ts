@@ -63,3 +63,16 @@ export function getLCM(numbers: number[]): number {
 export function generateLinearSequence({ count, increment = 1, start = 1 }: { count: number; increment?: number; start?: number; }): number[] {
   return Array.from({ length: count }, (_, i) => start + i * increment);
 }
+
+export function getSequenceProduct(sequence: number[]): number {
+  return sequence.reduce((acc, curr) => acc * curr);
+}
+
+export function convertNumberToSequence(n: number): number[] {
+  return n.toString().split('').map((num) => parseInt(num));
+}
+
+export function convertNumberStringToSequence(n: string): number[] {
+  if (n.match(/[^0-9]/)) return [];
+  return n.split('').map((num) => parseInt(num));
+}

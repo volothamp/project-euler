@@ -20,11 +20,13 @@
 // }
 
 // getNumber();
+import { getFileContents } from './inc/utils';
 import * as helpers from './problems/helpers';
 import { getFibonacciSequence } from './problems/prob-2';
 import { getLargestPalindromeProduct } from './problems/prob-4';
 import { problem6 } from './problems/prob-6';
 import { getNthPrime } from './problems/prob-7';
+import { getLargestConsecutiveProduct } from './problems/prob-8';
 
 console.log("Problem 1: ", helpers.getMultiples(1, 1000, [3, 5]).reduce((acc, curr) => acc + curr));
 console.log("Problem 2: ", helpers.getSumOfMultiples(getFibonacciSequence(1, 2, 4e6), [2]));
@@ -33,3 +35,6 @@ console.log("Problem 4: ", getLargestPalindromeProduct(100, 999));
 console.log("Problem 5: ", helpers.getLCM(helpers.generateLinearSequence({ count: 20 })));
 console.log("Problem 6: ", problem6(helpers.generateLinearSequence({count: 100})));
 console.log("Problem 7: ", getNthPrime(10001));
+
+let problem8Data = helpers.convertNumberStringToSequence(getFileContents('src/problems/data/prob-8.dat', true));
+console.log("Problem 8: ", getLargestConsecutiveProduct(problem8Data, 13));
