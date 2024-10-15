@@ -3,6 +3,7 @@ import { getLargestPalindromeProduct } from '../../src/problems/prob-4';
 import * as p6 from '../../src/problems/prob-6';
 import { getNthPrime } from '../../src/problems/prob-7';
 import { getLargestConsecutiveProduct } from '../../src/problems/prob-8';
+import { calculateProblem9 } from '../../src/problems/prob-9';
 
 describe('Problem Specific Functions', () => {
   describe('Problem 2', () => {
@@ -48,6 +49,16 @@ describe('Problem Specific Functions', () => {
   describe('Problem 8', () => {
     test('largest product of 3 adjacent numbers in [1234567890] should be 504', () => {
       expect(getLargestConsecutiveProduct([1,2,3,4,5,6,7,8,9,0], 3)).toBe(504);
+    });
+  });
+
+  describe('Problem 9', () => {
+    test('test pythagorean triplet of 12 should be 60 [3,4,5]', () => {
+      // object returned should contain the triplet and the product
+      expect(calculateProblem9(12)).toEqual({ triplet: [3, 4, 5], product: 60 });
+    });
+    test('test pythagorean triplet with impossible sum', () => {
+      expect(calculateProblem9(100)).toEqual({ triplet: [], product: NaN });
     });
   });
 });

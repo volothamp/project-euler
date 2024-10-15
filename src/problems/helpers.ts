@@ -68,6 +68,10 @@ export function getSequenceProduct(sequence: number[]): number {
   return sequence.reduce((acc, curr) => acc * curr);
 }
 
+export function getSequenceSum(sequence: number[]): number {
+  return sequence.reduce((acc, curr) => acc + curr);
+}
+
 export function convertNumberToSequence(n: number): number[] {
   return n.toString().split('').map((num) => parseInt(num));
 }
@@ -75,4 +79,18 @@ export function convertNumberToSequence(n: number): number[] {
 export function convertNumberStringToSequence(n: string): number[] {
   if (n.match(/[^0-9]/)) return [];
   return n.split('').map((num) => parseInt(num));
+}
+
+export function getPrimeSequenceBelow(max: number, inclusive: boolean = false): number[] {
+  if (inclusive) max++;
+  if (max <= 2) return [];
+  let primes: number[] = [2];
+  let test: number = 3;
+  while (test < max) {
+    if (primes.every((prime) => test % prime !== 0)) {
+      primes.push(test);
+    }
+    test += 2;
+  }
+  return primes;
 }

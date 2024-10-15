@@ -27,6 +27,7 @@ import { getLargestPalindromeProduct } from './problems/prob-4';
 import { problem6 } from './problems/prob-6';
 import { getNthPrime } from './problems/prob-7';
 import { getLargestConsecutiveProduct } from './problems/prob-8';
+import { calculateProblem9 } from './problems/prob-9';
 
 console.log("Problem 1: ", helpers.getMultiples(1, 1000, [3, 5]).reduce((acc, curr) => acc + curr));
 console.log("Problem 2: ", helpers.getSumOfMultiples(getFibonacciSequence(1, 2, 4e6), [2]));
@@ -38,3 +39,5 @@ console.log("Problem 7: ", getNthPrime(10001));
 
 let problem8Data = helpers.convertNumberStringToSequence(getFileContents('src/problems/data/prob-8.dat', true));
 console.log("Problem 8: ", getLargestConsecutiveProduct(problem8Data, 13));
+console.log("Problem 9: ", calculateProblem9(1000));
+console.log("Problem 10: ", helpers.getSequenceSum(helpers.getPrimeSequenceBelow(2e6)));
