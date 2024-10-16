@@ -4,6 +4,7 @@ import * as p6 from '../../src/problems/prob-6';
 import { getNthPrime } from '../../src/problems/prob-7';
 import { getLargestConsecutiveProduct } from '../../src/problems/prob-8';
 import { calculateProblem9 } from '../../src/problems/prob-9';
+import { getNumberGrid, getLargestProductInGrid } from '../../src/problems/prob-11';
 
 describe('Problem Specific Functions', () => {
   describe('Problem 2', () => {
@@ -61,4 +62,58 @@ describe('Problem Specific Functions', () => {
       expect(calculateProblem9(100)).toEqual({ triplet: [], product: NaN });
     });
   });
+
+  describe('Problem 11', () => {
+    describe('getNumberGrid()', () => {
+      test('data of 1 2 3 / 4 5 6 / 7 8 9 should return 2d array of numbers', () => {
+        const data = '1 2 3\n4 5 6\n7 8 9';
+        expect(getNumberGrid(data)).toEqual([[1,2,3],[4,5,6],[7,8,9]]);
+      });
+
+      test('same test but with leading 0s', () => {
+        const data = '01 02 03\n04 05 06\n07 08 09';
+        expect(getNumberGrid(data)).toEqual([[1,2,3],[4,5,6],[7,8,9]]);
+      });
+    });
+
+    describe('getLargestProductInGrid()', () => {
+      test('Test diagonal NE->SW (should be 6561)', () => {
+        const grid = [
+          [1,2,3,9],
+          [1,2,9,4],
+          [1,9,3,4],
+          [9,2,3,4]
+        ];
+        expect(getLargestProductInGrid(grid)).toBe(6561);
+      });
+      test('Test diagonal NW->SE (should be 6561)', () => {
+        const grid = [
+          [9,2,3,1],
+          [1,9,3,4],
+          [1,2,9,4],
+          [1,2,3,9]
+        ];
+        expect(getLargestProductInGrid(grid)).toBe(6561);
+      });
+      test('Test horizontal (should be 6561)', () => {
+        const grid = [
+          [1,2,3,4],
+          [1,2,3,4],
+          [9,9,9,9],
+          [1,2,3,4]
+        ];
+        expect(getLargestProductInGrid(grid)).toBe(6561);
+      });
+      test('Test vertical (should be 6561)', () => {
+        const grid = [
+          [1,2,9,4],
+          [1,2,9,4],
+          [1,2,9,4],
+          [1,2,9,4]
+        ];
+        expect(getLargestProductInGrid(grid)).toBe(6561);
+      });
+    });
+  });
+
 });
