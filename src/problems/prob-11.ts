@@ -1,9 +1,3 @@
-import { getFileContents } from "../inc/utils";
-
-export function getNumberGrid(data: string): number[][] {
-  return data.split('\n').map((line) => line.split(' ').map((num) => parseInt(num, 10)));
-}
-
 export function getLargestProductInGrid(grid: number[][], search: number = 4): number {
   let largestProduct = 0;
   let currentProduct = 0;

@@ -156,5 +156,22 @@ describe('Problem Helpers', () => {
       expect(helpers.getPrimeSequenceBelow(2, true)).toEqual([2]);
     });
   });
+
+  describe('getNumberGrid()', () => {
+    test('data of 1 2 3 / 4 5 6 / 7 8 9 should return 2d array of numbers', () => {
+      const data = '1 2 3\n4 5 6\n7 8 9';
+      expect(helpers.getNumberGrid(data)).toEqual([[1,2,3],[4,5,6],[7,8,9]]);
+    });
+
+    test('same test but with leading 0s', () => {
+      const data = '01 02 03\n04 05 06\n07 08 09';
+      expect(helpers.getNumberGrid(data)).toEqual([[1,2,3],[4,5,6],[7,8,9]]);
+    });
+
+    test('data of 123/456/789 and whitespace:false should return 2d array of numbers', () => {
+      const data = '123\n456\n789';
+      expect(helpers.getNumberGrid(data, false)).toEqual([[1,2,3],[4,5,6],[7,8,9]]);
+    });
+  });
 });
 

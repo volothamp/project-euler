@@ -58,18 +58,6 @@ describe('Problem Specific Functions', () => {
   });
 
   describe('Problem 11', () => {
-    describe('getNumberGrid()', () => {
-      test('data of 1 2 3 / 4 5 6 / 7 8 9 should return 2d array of numbers', () => {
-        const data = '1 2 3\n4 5 6\n7 8 9';
-        expect(problems.p11.getNumberGrid(data)).toEqual([[1,2,3],[4,5,6],[7,8,9]]);
-      });
-
-      test('same test but with leading 0s', () => {
-        const data = '01 02 03\n04 05 06\n07 08 09';
-        expect(problems.p11.getNumberGrid(data)).toEqual([[1,2,3],[4,5,6],[7,8,9]]);
-      });
-    });
-
     describe('getLargestProductInGrid()', () => {
       test('Test diagonal NE->SW (should be 6561)', () => {
         const grid = [
@@ -128,4 +116,27 @@ describe('Problem Specific Functions', () => {
     });
   });
 
+  describe('Problem 13', () => {
+    describe('addGrid()', () => {
+      test('add grid of numebers', () => {
+        const grid = [
+          [5,6,7],
+          [5,6,7],
+          [5,6,7],
+          [5,6,7]
+        ];
+        expect(problems.p13.addGrid(grid)).toEqual([2,2,6,8]);
+      });
+
+      test('grid with rows of different lengths throws error', () => {
+        const grid = [
+          [5,6,7],
+          [5,6,7,8],
+          [5,6,7],
+          [5,6,7]
+        ];
+        expect(() => problems.p13.addGrid(grid)).toThrowError('All rows must be the same length');
+      });
+    });
+  });
 });

@@ -18,3 +18,4 @@ export function getFileContents(path: string, flatten: boolean = false): string 
 
   return str;
 }
+
