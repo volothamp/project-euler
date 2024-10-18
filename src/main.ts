@@ -60,10 +60,21 @@ export function doProblem(num: number): void {
       console.log("Problem 10: ", problems.helpers.getSequenceSum(problems.helpers.getPrimeSequenceBelow(2e6)));
       break;
     case 11:
-      console.log("Problem 11: ", problems.p11.getLargestProductInGrid(problems.p11.getNumberGrid(utils.getFileContents('src/problems/data/prob-11.dat')), 4));
+      console.log("Problem 11: ", problems.p11.getLargestProductInGrid(problems.helpers.getNumberGrid(utils.getFileContents('src/problems/data/prob-11.dat')), 4));
       break;
     case 12:
       console.log("Problem 12: ", problems.p12.getTriangleNumberWithOverNFactors(500));
+      break;
+    case 13:
+      console.log(
+        "Problem 13: ", 
+        problems.p13.addGrid(
+          problems.helpers.getNumberGrid(
+            utils.getFileContents('src/problems/data/prob-13.dat'),
+            false
+          )
+        ).slice(0,10).join('')
+      );
       break;
     default:
       console.clear();
