@@ -94,3 +94,8 @@ export function getPrimeSequenceBelow(max: number, inclusive: boolean = false): 
   }
   return primes;
 }
+
+export function getNumberGrid(data: string, whitespace: boolean = true): number[][] {
+  let split: string = whitespace ? ' ' : '';
+  return data.split('\n').map((line) => line.split(split).map((num) => parseInt(num, 10)));
+}
