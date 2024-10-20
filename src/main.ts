@@ -76,6 +76,12 @@ export function doProblem(num: number): void {
         ).slice(0,10).join('')
       );
       break;
+    case 14:
+      console.log("Problem 14: ", problems.p14.getLongestCollatzSequence(1e6));
+      break;
+    case 15:
+      console.log("Problem 15: ", problems.p15.countLatticePaths(20, 20));
+      break;
     default:
       console.clear();
       console.log("Invalid problem number");

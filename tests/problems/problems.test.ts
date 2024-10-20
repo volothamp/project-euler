@@ -139,4 +139,25 @@ describe('Problem Specific Functions', () => {
       });
     });
   });
+
+  describe('Problem 14', () => {
+    describe('getCollatzSequence()', () => {
+      test('sequence for 13 should be [13, 40, 20, 10, 5, 16, 8, 4, 2, 1]', () => {
+        expect(problems.p14.getCollatzSequence(13)).toEqual([13, 40, 20, 10, 5, 16, 8, 4, 2, 1]);
+      });
+    });
+    describe('getLongestCollatzSequence()', () => {
+      test('longest collatz sequence under 10 should be 9', () => {
+        expect(problems.p14.getLongestCollatzSequence(10)).toEqual({ n: 9, length: 20 });
+      });
+    });
+  });
+
+  describe('Problem 15', () => {
+    describe('countLatticePaths()', () => {
+      test('2x2 grid should have 6 paths', () => {
+        expect(problems.p15.countLatticePaths(2, 2)).toEqual(6);
+      });
+    });
+  });
 });
