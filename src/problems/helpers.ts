@@ -99,3 +99,11 @@ export function getNumberGrid(data: string, whitespace: boolean = true): number[
   let split: string = whitespace ? ' ' : '';
   return data.split('\n').map((line) => line.split(split).map((num) => parseInt(num, 10)));
 }
+
+export function factorial(n: number): number {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}

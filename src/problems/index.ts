@@ -8,7 +8,9 @@ import * as p9 from './prob-9';
 import * as p11 from './prob-11';
 import * as p12 from './prob-12';
 import * as p13 from './prob-13';
+import * as p14 from './prob-14';
+import * as p15 from './prob-15';
 
 
 // export all
-export { helpers, p2, p4, p6, p7, p8, p9, p11, p12, p13 };
+export { helpers, p2, p4, p6, p7, p8, p9, p11, p12, p13, p14, p15};

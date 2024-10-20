@@ -173,5 +173,17 @@ describe('Problem Helpers', () => {
       expect(helpers.getNumberGrid(data, false)).toEqual([[1,2,3],[4,5,6],[7,8,9]]);
     });
   });
+
+  describe('factorial()', () => {
+    test('factorial of 5 should be 120', () => {
+      expect(helpers.factorial(5)).toBe(120);
+    });
+    test('factorial of 0 should be 1', () => {
+      expect(helpers.factorial(0)).toBe(1);
+    });
+    test('factorial of 1 should be 1', () => {
+      expect(helpers.factorial(1)).toBe(1);
+    });
+  });
 });
 
